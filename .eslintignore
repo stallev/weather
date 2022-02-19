@@ -1,0 +1,9 @@
+node_modules
+build
+amplify
+doc
+endpoints
+src/models
+tests
+.next
+pages
