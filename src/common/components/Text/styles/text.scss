@@ -1,0 +1,17 @@
+@import '../../../styles/variables.scss';
+
+.text {
+  &--color{
+    &-white {
+      color: $color-white;
+    }
+
+    &-blue {
+      color: $color-blue;
+    }
+
+    &-gray {
+      color: $color-gray;
+    }
+  }
+}

@@ -1,12 +1,25 @@
 import React from 'react';
+import cx from 'classnames';
 
 import './styles/button.scss';
 
-const Button = () => {
+const Button = ({
+  buttonText,
+  onClick,
+  className,
+  buttonLocation
+}) => {
   return (
-    <div className="button">
-      <p>Button</p>
-    </div>
+    <button 
+      className={cx(
+        'button',
+        `custom-button--${buttonLocation}`,
+        className
+      )}
+      onClick={onClick}
+      type="button">
+      {buttonText}
+    </button>
   )
 }
 

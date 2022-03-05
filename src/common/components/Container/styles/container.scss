@@ -2,12 +2,13 @@
   min-height: 20px;
   width: calc(100% - 60px);
   margin: 0 auto;
+  box-sizing: border-box;
 
   @media screen and (min-width: 768px){
     width: 550px;
   }
 
-  @media screen and (min-width: 1024px){
-    width: 700px;
+  @media screen and (min-width: 1280px){
+    width: 1060px;
   }
 }

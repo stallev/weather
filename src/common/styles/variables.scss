@@ -1,0 +1,42 @@
+$background-color: #000;
+$color-super-dark-gray: #4f4f4f;
+$color-dark-gray: #2e3035;
+$color-gray: #939cb0;
+$color-white: #fff;
+$color-blue: #4793ff;
+$dark-box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
+
+$font-size-sm: 13px;
+$font-size-ms: 14px;
+$font-size-md: 18px;
+$font-size-lg: 25px;
+$font-size-xl: 40px;
+$font-size-xlg: 96px;
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$line-height-sm: 16px;
+$line-height-ms: 17px;
+$line-height-md: 22px;
+$line-height-lg: 30px;
+$line-height-xl: 49px;
+$line-height-xlg: 117px;
+
+$gutter-base: 10px;
+$gutter-xs: $gutter-base * 0.25; // 4
+$gutter-sm: $gutter-base * 0.5; // 8
+$gutter-ms: $gutter-base * 0.6; // 6
+$gutter-ml: $gutter-base * 1.4; // 14
+$gutter-lg: $gutter-base * 2; // 20
+$gutter-xl: $gutter-base * 3.2; // 32
+$gutter-xlg: $gutter-base * 4; // 40
+$gutter-xxlg: $gutter-base * 5; // 50
+
+@mixin big-blocks-appearance {
+  padding: $gutter-lg;
+  background: $color-super-dark-gray;
+  box-shadow: $dark-box-shadow;
+  border-radius: 20px;
+}

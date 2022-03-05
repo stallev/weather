@@ -1,3 +1,14 @@
-.descriptionWeather {
-  
+@import "../../../styles/variables.scss";
+
+.description-weather {
+  @include big-blocks-appearance;
+  display: flex;
+  flex-grow: 2;
+
+  &__list {
+    display: flex;
+    flex-grow: 2;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
