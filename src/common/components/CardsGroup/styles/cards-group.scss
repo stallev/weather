@@ -2,6 +2,7 @@
 
 .cards-group {
   display: none;
+  overflow-x: scroll;
 
   &--active {
     display: flex;

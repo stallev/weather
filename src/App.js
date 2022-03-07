@@ -8,13 +8,26 @@ import './App.scss';
 
 function App() {
   const [weatherData, setWeatherData] = useState({});
-  const getWeather = async () => {
-    
-  }
+  const RESULT_KINDS = {
+    CurrentWeather: 'current',
+    Forecast: 'forecast',
+    SearchAutocomplete: 'search',
+    History: 'history',
+    Future: 'future',
+    TimeZone: 'timezone',
+    Sports: 'sports',
+    Astronomy: 'astronomy',
+    IPLookup: 'ip'
+
+  };
+  const API_KEY = 'ea83437c43164c27913101917220703';
+  const apiUrl = `https://api.weatherapi.com/v1/${RESULT_KINDS.Forecast}.json?key=${API_KEY}&q=58,33&days=3&lang=ru`;
 
   useEffect(() => {
-    getWeather();
-  }, []);
+    fetch(apiUrl)
+      .then((res) => res.json())
+      .then((data) => setWeatherData(data));
+  }, [apiUrl]);
 
   useEffect(() => {
     console.log(weatherData);
