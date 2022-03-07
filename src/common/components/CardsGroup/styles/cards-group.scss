@@ -1,0 +1,9 @@
+@import "../../../styles/variables.scss";
+
+.cards-group {
+  display: none;
+
+  &--active {
+    display: flex;
+  }
+}

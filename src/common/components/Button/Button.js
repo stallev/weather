@@ -13,7 +13,7 @@ const Button = ({
     <button 
       className={cx(
         'button',
-        `custom-button--${buttonLocation}`,
+        `button--${buttonLocation}`,
         className
       )}
       onClick={onClick}

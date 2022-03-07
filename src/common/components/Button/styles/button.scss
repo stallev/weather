@@ -8,8 +8,13 @@
   font-size: $font-size-md;
   line-height: $line-height-md;
   color: $color-white;
+  cursor: pointer;
 
   &--tabs:not(:last-of-type) {
     margin-right: $gutter-ml;
+  }
+
+  &--active {
+    background-color: $color-blue;
   }
 }

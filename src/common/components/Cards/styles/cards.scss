@@ -1,0 +1,15 @@
+@import "../../../styles/variables.scss";
+
+.cards {
+  &__tabs {
+    display: flex;
+    margin-bottom: $gutter-sm;
+  }
+
+  &__groups {
+    padding: $gutter-lg;
+    background: $color-super-dark-gray;
+    box-shadow: $dark-box-shadow;
+    border-radius: 0px 0px 20px 20px;
+  }
+}

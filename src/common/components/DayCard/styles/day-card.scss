@@ -1,0 +1,46 @@
+@import "../../../styles/variables.scss";
+
+.day-card {
+  display: flex;
+  flex-direction: column;
+  padding: $gutter-base;
+  margin-right: $gutter-lg;
+  min-width: 149px;
+  background: $color-dark-gray;
+  border-radius: 10px;
+
+  &__week-day {
+    margin-bottom: $gutter-ms;
+    font-size: $font-size-md;
+    line-height: $line-height-md;
+  }
+
+  &__date {
+    margin-bottom: $gutter-base;
+    font-size: $font-size-ms;
+    line-height: $line-height-ms;
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 44px;
+    height: 46px;
+    margin-bottom: $gutter-ml;
+  }
+
+  &__day-temperature {
+    font-size: $font-size-md;
+    line-height: $line-height-md;
+  }
+
+  &__night-temperature {
+    margin-bottom: $gutter-ms;
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+  }
+
+  &__sun-quantity {
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+  }
+}
