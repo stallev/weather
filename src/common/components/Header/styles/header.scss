@@ -1,0 +1,18 @@
+@import '../../../styles/variables.scss';
+
+.header {
+  padding-top: $gutter-lg;
+  margin-bottom: $gutter-xl;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+  }
+
+  &__logo-icon {
+    margin-right: $gutter-lg;
+  }
+}

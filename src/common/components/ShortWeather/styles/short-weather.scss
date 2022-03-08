@@ -1,0 +1,50 @@
+@import "../../../styles/variables.scss";
+
+.short-weather {
+  @include big-blocks-appearance;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $gutter-lg;
+  width: fit-content;
+
+  @media screen and (min-width: 1024px) {
+    margin-right: $gutter-xxlg;
+    margin-bottom: 0;
+  }
+
+  &__value {
+    display: flex;
+    margin-bottom: 30px;
+  }
+
+  &__temperature {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+  }
+
+  &__temperature-value {
+    font-size: $font-size-xlg;
+    line-height: $line-height-xlg;
+
+    @media screen and (min-width: 1024px) {
+      font-size: $font-size-xlg;
+      line-height: $line-height-xlg;
+    }
+  }
+
+  &__date {
+    font-size: $font-size-xl;
+    line-height: $line-height-xl;
+  }
+
+  &__icon {
+    width: 119px;
+    height: 119px;
+  }
+
+  &__other {
+    font-size: $font-size-lg;
+    line-height: $line-height-lg;
+  }
+}

@@ -1,0 +1,56 @@
+@import "../../../styles/variables.scss";
+
+.description-weather {
+  @include big-blocks-appearance;
+  display: flex;
+  flex-grow: 2;
+  width: fit-content;
+
+  @media screen and (min-width: 768px) {
+
+  }
+
+  &__list {
+    display: flex;
+    flex-grow: 2;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__parameter {
+    display: flex;
+    align-items: center;
+    &:not(:last-child) {
+      margin-bottom: $gutter-lg;
+    }
+  
+    @media screen and (min-width: 1024px) {
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
+  
+    &-icon-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 38px;
+      height: 38px;
+      margin-right: $gutter-lg;
+      background-color: $color-white;
+      border-radius: 50%;
+    }
+  
+    &-name {
+      width: fit-content;
+      margin-right: $gutter-lg;
+      font-size: $font-size-ms;
+      line-height: $line-height-ms;
+    }
+  
+    &-value {
+      font-size: $font-size-ms;
+      line-height: $line-height-ms;
+    }
+  }
+}

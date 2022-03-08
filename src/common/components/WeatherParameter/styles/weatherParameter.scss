@@ -1,0 +1,38 @@
+@import "../../../styles/variables.scss";
+
+.weather-parameter {
+  display: flex;
+  align-items: center;
+  &:not(:last-child) {
+    margin-bottom: $gutter-lg;
+  }
+
+  @media screen and (min-width: 1024px) {
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__icon-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 38px;
+    height: 38px;
+    margin-right: $gutter-lg;
+    background-color: $color-white;
+    border-radius: 50%;
+  }
+
+  &__name {
+    width: fit-content;
+    margin-right: $gutter-lg;
+    font-size: $font-size-ms;
+    line-height: $line-height-ms;
+  }
+
+  &__value {
+    font-size: $font-size-ms;
+    line-height: $line-height-ms;
+  }
+}
