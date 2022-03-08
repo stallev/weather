@@ -5,7 +5,9 @@ import CardsGroup from '../CardsGroup/CardsGroup';
 
 import './styles/cards.scss';
 
-const Cards = () => {
+const Cards = ({
+  forecastData
+}) => {
   const [isWeatherInterval, setIsWeatherInterval] = useState({
     week: true,
     decade: false,
@@ -32,7 +34,7 @@ const Cards = () => {
               }
             )
           }
-          buttonText="На неделю"
+          buttonText="На 3 дня"
           buttonLocation="tabs"
           onClick={changeWeatherInterval('week')}
         />
@@ -64,30 +66,11 @@ const Cards = () => {
       <div className="cards__groups">
         <CardsGroup 
           period="week"
+          forecastData={forecastData}
           className={
             cx(
               {
                 'cards-group--active': isWeatherInterval.week
-              }
-            )
-          }
-        />
-        <CardsGroup 
-          period="decade"
-          className={
-            cx(
-              {
-                'cards-group--active': isWeatherInterval.decade
-              }
-            )
-          }
-        />
-        <CardsGroup 
-          period="month"
-          className={
-            cx(
-              {
-                'cards-group--active': isWeatherInterval.month
               }
             )
           }

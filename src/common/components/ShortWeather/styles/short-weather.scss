@@ -4,7 +4,13 @@
   @include big-blocks-appearance;
   display: flex;
   flex-direction: column;
-  margin-right: $gutter-xxlg;
+  margin-bottom: $gutter-lg;
+  width: fit-content;
+
+  @media screen and (min-width: 1024px) {
+    margin-right: $gutter-xxlg;
+    margin-bottom: 0;
+  }
 
   &__value {
     display: flex;
@@ -14,12 +20,17 @@
   &__temperature {
     display: flex;
     flex-direction: column;
-    margin-right: 60px;
+    margin-right: 30px;
   }
 
   &__temperature-value {
     font-size: $font-size-xlg;
     line-height: $line-height-xlg;
+
+    @media screen and (min-width: 1024px) {
+      font-size: $font-size-xlg;
+      line-height: $line-height-xlg;
+    }
   }
 
   &__date {

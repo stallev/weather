@@ -8,7 +8,11 @@
   padding-bottom: $gutter-lg;
 
   @media screen and (min-width: 768px){
-    width: 550px;
+    width: 650px;
+  }
+
+  @media screen and (min-width: 1024px){
+    width: 900px;
   }
 
   @media screen and (min-width: 1280px){

@@ -1,74 +1,26 @@
 import React from 'react';
 import cx from 'classnames';
+import { periods } from '../../constants';
 import DayCard from '../DayCard/DayCard';
 
 import './styles/cards-group.scss';
 
 const CardsGroup = ({
   className,
-  period
+  period,
+  forecastData
 }) => {
   return (
     <div className={cx(
       'cards-group',
       className
     )}>
-      <DayCard
-        weekDay="Сегодня"
-        date="28 мар"
-        icon="small_rain_sun"
-        dayTemperature="15"
-        nightTemperature="5"
-        sunQuantity="Облачно"
-      />
-      <DayCard
-        weekDay="Сегодня"
-        date="28 мар"
-        icon="small_rain_sun"
-        dayTemperature="15"
-        nightTemperature="5"
-        sunQuantity="Облачно"
-      />
-      <DayCard
-        weekDay="Сегодня"
-        date="28 мар"
-        icon="small_rain_sun"
-        dayTemperature="15"
-        nightTemperature="5"
-        sunQuantity="Облачно"
-      />
-      <DayCard
-        weekDay="Сегодня"
-        date="28 мар"
-        icon="small_rain_sun"
-        dayTemperature="15"
-        nightTemperature="5"
-        sunQuantity="Облачно"
-      />
-      <DayCard
-        weekDay="Сегодня"
-        date="28 мар"
-        icon="small_rain_sun"
-        dayTemperature="15"
-        nightTemperature="5"
-        sunQuantity="Облачно"
-      />
-      <DayCard
-        weekDay="Сегодня"
-        date="28 мар"
-        icon="small_rain_sun"
-        dayTemperature="15"
-        nightTemperature="5"
-        sunQuantity="Облачно"
-      />
-      <DayCard
-        weekDay="Сегодня"
-        date="28 мар"
-        icon="small_rain_sun"
-        dayTemperature="15"
-        nightTemperature="5"
-        sunQuantity="Облачно"
-      />
+      {forecastData.slice(0,periods[period]).map((day) => (
+        <DayCard
+          key={day.date}
+          dayData={day}
+        />
+      ))}
     </div>
   );
 };

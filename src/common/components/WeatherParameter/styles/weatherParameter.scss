@@ -3,6 +3,15 @@
 .weather-parameter {
   display: flex;
   align-items: center;
+  &:not(:last-child) {
+    margin-bottom: $gutter-lg;
+  }
+
+  @media screen and (min-width: 1024px) {
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
 
   &__icon-wrap {
     display: flex;
@@ -16,7 +25,7 @@
   }
 
   &__name {
-    width: 100px;
+    width: fit-content;
     margin-right: $gutter-lg;
     font-size: $font-size-ms;
     line-height: $line-height-ms;

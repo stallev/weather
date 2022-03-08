@@ -4,11 +4,19 @@ import DescriptionWeather from '../DescriptionWeather/DescriptionWeather';
 
 import './styles/fullInfo.scss'
 
-const FullInfo = () => {
+const FullInfo = ({
+  currentWeatherData,
+  locationData
+}) => {
   return (
     <div className='full-info'>
-      <ShortWeather/>
-      <DescriptionWeather/>
+      <ShortWeather
+        currentWeather={currentWeatherData}
+        locationData={locationData}
+      />
+      <DescriptionWeather
+        currentWeatherData={currentWeatherData}
+      />
     </div>
   );
 };
