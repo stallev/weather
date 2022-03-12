@@ -1,0 +1,15 @@
+@import '../../../styles/variables.scss';
+
+.places-autocomplete {
+  display: block;
+  width: 100%;
+  
+  & .pac-target-input {
+    display: inline-block;
+    padding: $gutter-xs $gutter-lg;
+    font-size: $font-size-md;
+    line-height: $line-height-lg;
+    color: $color-white;
+    background: $color-dark-gray;
+  }
+}

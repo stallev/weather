@@ -4,10 +4,23 @@
   display: flex;
   flex-direction: column;
   padding: $gutter-base;
-  margin-right: $gutter-lg;
-  min-width: 149px;
+  margin-bottom: $gutter-base;
+  width: 149px;
   background: $color-dark-gray;
   border-radius: 10px;
+  cursor: pointer;
+
+  &:not(:last-of-type) {
+    margin-right: $gutter-lg;
+  }
+  
+  &--active {
+    border: 3px solid rgb(250, 215, 16);
+  }
+
+  &--hourly {
+    cursor: auto;
+  }
 
   &__week-day {
     margin-bottom: $gutter-ms;

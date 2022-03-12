@@ -11,5 +11,8 @@
     background: $color-super-dark-gray;
     box-shadow: $dark-box-shadow;
     border-radius: 0px 0px 20px 20px;
+    width: fit-content;
+    max-width: 100%;
+    overflow-x: auto;
   }
 }

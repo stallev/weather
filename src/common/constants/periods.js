@@ -1,5 +1,5 @@
 export const periods = {
   week: 3,
-  decade: 10,
+  hourly: 24,
   month: 31
 };

@@ -1,24 +1,37 @@
 import React from 'react';
 import cx from 'classnames';
-import { periods } from '../../constants';
 import DayCard from '../DayCard/DayCard';
 
 import './styles/cards-group.scss';
 
 const CardsGroup = ({
   className,
-  period,
-  forecastData
+  changeWeatherInterval,
+  forecastData,
+  setActiveDay,
+  activeDay,
+  isHourly
 }) => {
+  console.log('forecastData is ', forecastData);
+  const changeActiveDay = (day) => () => {
+    setActiveDay(day);
+    changeWeatherInterval('hourly');
+  };
+  
   return (
     <div className={cx(
       'cards-group',
       className
     )}>
-      {forecastData.slice(0,periods[period]).map((day) => (
+      {forecastData.map((day, index) => (
         <DayCard
-          key={day.date}
-          dayData={day}
+          key={index}
+          weatherData={day}
+          isHourly={isHourly}
+          setActiveDay={setActiveDay}
+          activeDay={activeDay}
+          changeActiveDay={changeActiveDay}
+          onClick={!isHourly ? changeActiveDay(day) : undefined}
         />
       ))}
     </div>

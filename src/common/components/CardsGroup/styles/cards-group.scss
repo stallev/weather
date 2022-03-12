@@ -2,7 +2,8 @@
 
 .cards-group {
   display: none;
-  overflow-x: scroll;
+  overflow-x: auto;
+  width: fit-content;
 
   &--active {
     display: flex;

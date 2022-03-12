@@ -12,6 +12,7 @@ const Text = ({
   className,
   color = 'white',
   children,
+  onClick,
   ...props
 }) => {
 
@@ -43,6 +44,7 @@ const Text = ({
         `text--color-${color}`,
         className
       )}
+      onClick={onClick}
     >
       {
         prefixIcon && (
