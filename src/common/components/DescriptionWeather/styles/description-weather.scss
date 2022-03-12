@@ -5,10 +5,9 @@
   display: flex;
   flex-grow: 2;
   width: fit-content;
-
-  @media screen and (min-width: 768px) {
-
-  }
+  background-image: url('../../../../assets/images/clouds.png');
+  background-position: right top;
+  background-size: contain;
 
   &__list {
     display: flex;

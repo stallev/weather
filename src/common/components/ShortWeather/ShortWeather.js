@@ -15,7 +15,7 @@ const ShortWeather = ({
       <div className="short-weather__value">
         <div className="short-weather__temperature">
           <Text className="short-weather__temperature-value" color="blue">{currentWeather.temp_c}&#8451;</Text>
-          <Text className="short-weather__date">Сегодня</Text>
+          <Text className="short-weather__date">Сейчас</Text>
         </div>
         <WeatherIcon
           className="short-weather__icon"
@@ -24,7 +24,7 @@ const ShortWeather = ({
       </div>
       <div className="short-weather__other">
         <Text className="short-weather__time" color="gray">Время:&nbsp;<span>{currentTime.hours}:{currentTime.minutes}</span></Text>
-        <Text className="short-weather__location" color="gray">Город:&nbsp;<span>{locationData.city}</span></Text>
+        <Text className="short-weather__location" color="gray">Город:&nbsp;<span>{locationData.name}</span></Text>
       </div>
     </div>
   )

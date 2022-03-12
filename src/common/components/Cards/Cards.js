@@ -13,6 +13,8 @@ const Cards = ({
     decade: false,
     month: false
   });
+  const [activeDay, setActiveDay] = useState(forecastData[0]);
+  console.log('activeDay is ', activeDay);
 
   const changeWeatherInterval = (interval) => () => {
     setIsWeatherInterval({
@@ -20,9 +22,10 @@ const Cards = ({
       decade: false,
       month: false,
       [interval]: true
-    })
-  }
-
+    });
+    console.log('interval is ', interval);
+  };
+  console.log(forecastData);
   return (
     <div className="cards">
       <div className="cards__tabs">
@@ -42,35 +45,40 @@ const Cards = ({
           className={
             cx(
               {
-                'button--active': isWeatherInterval.decade
+                'button--active': isWeatherInterval.hourly
               }
             )
           }
-          buttonText="На 10 дней"
+          buttonText="На 24 часа"
           buttonLocation="tabs"
-          onClick={changeWeatherInterval('decade')}
-        />
-        <Button
-          className={
-            cx(
-              {
-                'button--active': isWeatherInterval.month
-              }
-            )
-          }
-          buttonText="На месяц"
-          buttonLocation="tabs"
-          onClick={changeWeatherInterval('month')}
+          onClick={changeWeatherInterval('hourly')}
         />
       </div>
       <div className="cards__groups">
         <CardsGroup 
           period="week"
           forecastData={forecastData}
+          setActiveDay={setActiveDay}
+          activeDay={activeDay}
+          changeWeatherInterval={changeWeatherInterval}
           className={
             cx(
               {
                 'cards-group--active': isWeatherInterval.week
+              }
+            )
+          }
+        />
+        <CardsGroup 
+          period="hourly"
+          isHourly
+          forecastData={activeDay.hour}
+          setActiveDay={setActiveDay}
+          activeDay={activeDay}
+          className={
+            cx(
+              {
+                'cards-group--active': isWeatherInterval.hourly
               }
             )
           }

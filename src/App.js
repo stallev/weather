@@ -25,7 +25,6 @@ function App() {
   };
   const API_KEY = 'ea83437c43164c27913101917220703';
   const apiUrl = `https://api.weatherapi.com/v1/${RESULT_KINDS.Forecast}.json?key=${API_KEY}&q=${initialCoords.lat},${initialCoords.lon}&days=3&lang=ru`;
-  const apiLocation = `https://api.weatherapi.com/v1/${RESULT_KINDS.Forecast}.json?key=${API_KEY}&q=58,33&days=3&lang=ru`;
 
   const getLocation = async () => {
     const res = await axios.get('https://geolocation-db.com/json/');
@@ -48,20 +47,25 @@ function App() {
   }, [apiUrl, initialCoords]);
   
   useEffect( () => {
-    getLocation()
+    getLocation();
   }, []);
+
+  useEffect( () => {
+    console.log(weatherData)
+  }, [weatherData]);
 
   return (
     <div className="App">
       <Container>
-        {/* <Geolocation/> */}
-        <Header></Header>
+        <Header
+          setInitialCoords={setInitialCoords}
+        />
         {
           !!weatherData.current && (
             <>
               <FullInfo
                 currentWeatherData={weatherData.current}
-                locationData={initialLocation}
+                locationData={weatherData.location}
               />
               <Cards forecastData={weatherData.forecast.forecastday} />
             </>

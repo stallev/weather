@@ -1,9 +1,12 @@
 import React from 'react';
 import Text from '../Text/Text';
+import PlacesAutocomplete from '../PlacesAutocomplete/PlacesAutocomplete';
 
 import './styles/header.scss';
 
-const Header = () => {
+const Header = ({
+  setInitialCoords
+}) => {
   return (
     <div className="header">
       <Text
@@ -14,6 +17,11 @@ const Header = () => {
       >
         React weather
       </Text>
+      <div className="header__search">
+        <PlacesAutocomplete
+          setInitialCoords={setInitialCoords}
+        />
+      </div>
     </div>
   )
 }
