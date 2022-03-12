@@ -21,8 +21,8 @@ function App() {
     Sports: 'sports',
     Astronomy: 'astronomy',
     IPLookup: 'ip'
-
   };
+
   const API_KEY = 'ea83437c43164c27913101917220703';
   const apiUrl = `https://api.weatherapi.com/v1/${RESULT_KINDS.Forecast}.json?key=${API_KEY}&q=${initialCoords.lat},${initialCoords.lon}&days=3&lang=ru`;
 
@@ -34,7 +34,6 @@ function App() {
       lon: res.data.longitude
     });
     console.log(res.data);
-    // if (res.data) localStorage.setItem('suggestLocation', );
   };
 
   useEffect(() => {

@@ -56,7 +56,6 @@ const Cards = ({
       </div>
       <div className="cards__groups">
         <CardsGroup 
-          period="week"
           forecastData={forecastData}
           setActiveDay={setActiveDay}
           activeDay={activeDay}
@@ -70,7 +69,6 @@ const Cards = ({
           }
         />
         <CardsGroup 
-          period="hourly"
           isHourly
           forecastData={activeDay.hour}
           setActiveDay={setActiveDay}

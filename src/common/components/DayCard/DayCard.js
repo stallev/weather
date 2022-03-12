@@ -9,7 +9,6 @@ import './styles/day-card.scss';
 const DayCard = ({
   weatherData,
   activeDay,
-  changeActiveDay,
   isHourly,
   onClick
 }) => {

@@ -1,13 +1,11 @@
 import React from 'react';
 import cx from 'classnames';
-import { periods } from '../../constants';
 import DayCard from '../DayCard/DayCard';
 
 import './styles/cards-group.scss';
 
 const CardsGroup = ({
   className,
-  period,
   changeWeatherInterval,
   forecastData,
   setActiveDay,

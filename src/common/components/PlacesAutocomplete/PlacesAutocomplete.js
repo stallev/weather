@@ -20,7 +20,6 @@ const PlacesAutocomplete = ({
 
   useEffect(() => {
     setInitialCoords(suggestLocation);
-    console.log('suggestLocation is ', suggestLocation);
   }, [suggestLocation]);
 
   return (
