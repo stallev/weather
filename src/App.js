@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import Container from './common/components/Container/Container';
 import Header from './common/components/Header/Header';
 import FullInfo from './common/components/FullInfo/FullInfo';
 import Cards from './common/components/Cards/Cards';
+import { changeWeatherAction } from './store/weatherReducer';
 
 import './App.scss';
 
 function App() {
+  const dispatch = useDispatch();
+  const storedWeatherData = useSelector(state => state.weatherReducer.weatherData);
+  console.log('storedWeatherData is ', storedWeatherData);
+
   const [weatherData, setWeatherData] = useState({});
   const [initialLocation, setInitialLocation] = useState('');
   const [initialCoords, setInitialCoords] = useState({});
@@ -40,7 +46,10 @@ function App() {
     if(initialCoords.lat) {
       fetch(apiUrl)
         .then((res) => res.json())
-        .then((data) => setWeatherData(data));
+        .then((data) => {
+          setWeatherData(data);
+          dispatch(changeWeatherAction(data));
+        });
     }
       
   }, [apiUrl, initialCoords]);
