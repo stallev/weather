@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import Container from './common/components/Container/Container';
 import Header from './common/components/Header/Header';
 import FullInfo from './common/components/FullInfo/FullInfo';
 import Cards from './common/components/Cards/Cards';
-import { changeWeatherAction } from './store/weatherReducer';
+import { useTypedSelector } from '../src/common/hooks/useTypedSelector';
+import { useActions } from '../src/common/hooks/useActions';
 
 import './App.scss';
 
 function App() {
-  const dispatch = useDispatch();
-  const storedWeatherData = useSelector(state => state.weatherReducer.weatherData);
-  console.log('storedWeatherData is ', storedWeatherData);
+  const { changeWeatherAction } = useActions();
+  const { weatherInfo } = useTypedSelector(({ weather }) => weather);
+  console.log('storedWeatherData is ', weatherInfo);
 
   const [weatherData, setWeatherData] = useState({});
   const [initialLocation, setInitialLocation] = useState('');
@@ -48,7 +48,7 @@ function App() {
         .then((res) => res.json())
         .then((data) => {
           setWeatherData(data);
-          dispatch(changeWeatherAction(data));
+          changeWeatherAction(data);
         });
     }
       
