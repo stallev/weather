@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import cx from 'classnames';
 import DayCard from '../DayCard/DayCard';
 
@@ -12,10 +12,9 @@ const CardsGroup = ({
   activeDay,
   isHourly
 }) => {
-  console.log('forecastData is ', forecastData);
   const changeActiveDay = (day) => () => {
     setActiveDay(day);
-    changeWeatherInterval('hourly');
+    changeWeatherInterval();
   };
   
   return (

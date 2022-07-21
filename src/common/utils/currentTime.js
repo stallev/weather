@@ -1,12 +1,12 @@
-import { weekDaysList, monthsList } from "../constants";
+import { weekDaysListEng, monthsListEng } from "../constants";
 
 export const getCurrentTime =() => {
   const today = new Date();
   const currentTime = {
     year: today.getFullYear(),
-    month: monthsList[today.getMonth()],
+    month: monthsListEng[today.getMonth()],
     dayNumber: today.getDate(),
-    weekDay: weekDaysList[today.getDay()],
+    weekDay: weekDaysListEng[today.getDay()],
     hours: today.getHours(),
     minutes: today.getMinutes(),
     seconds: today.getSeconds()

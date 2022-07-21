@@ -26,8 +26,8 @@ const PlacesAutocomplete = ({
     <div className="places-autocomplete">
       <Autocomplete
         apiKey={MAP_API_KEY}
-        language="ru"
-        placeholder="Выбрать местоположение"
+        language="en"
+        placeholder="Choose location"
         onPlaceSelected={(place) => {
           if (place.name === '') {
             console.log('Please, enter address', place.name);

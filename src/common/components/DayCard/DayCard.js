@@ -1,6 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
-import { weekDaysList, monthsList } from '../../constants';
+import { weekDaysListEng, monthsListEng } from '../../constants';
 import WeatherIcon from '../WeatherIcon/WeatherIcon';
 import Text from '../Text/Text';
 
@@ -39,12 +39,12 @@ const DayCard = ({
     >
       {!isHourly ? (
         <>
-          <Text className="day-card__week-day" heading4>{weekDaysList[dayDate.getDay()]}</Text>
-          <Text className="day-card__date" color="gray">{dayDate.getDate()}&nbsp;{monthsList[dayDate.getMonth()]}</Text>
+          <Text className="day-card__week-day" heading4>{weekDaysListEng[dayDate.getDay()]}</Text>
+          <Text className="day-card__date" color="gray">{dayDate.getDate()}&nbsp;{monthsListEng[dayDate.getMonth()]}</Text>
         </>
       ) : (
         <>
-          <Text className="day-card__date">{dayDate.getDate()}&nbsp;{monthsList[dayDate.getMonth()]}</Text>
+          <Text className="day-card__date">{dayDate.getDate()}&nbsp;{monthsListEng[dayDate.getMonth()]}</Text>
           <Text className="day-card__week-day">{weatherTime}</Text>
         </>
       )
