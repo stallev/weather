@@ -12,7 +12,7 @@ import './App.scss';
 function App() {
   const dispatch = useDispatch();
   const storedWeatherData = useSelector(state => state.weatherReducer.weatherData);
-  console.log('storedWeatherData is ', storedWeatherData);
+  // console.log('storedWeatherData is ', storedWeatherData);
 
   const [weatherData, setWeatherData] = useState({});
   const [initialLocation, setInitialLocation] = useState('');
@@ -30,7 +30,7 @@ function App() {
   };
 
   const API_KEY = 'ea83437c43164c27913101917220703';
-  const apiUrl = `https://api.weatherapi.com/v1/${RESULT_KINDS.Forecast}.json?key=${API_KEY}&q=${initialCoords.lat},${initialCoords.lon}&days=3&lang=ru`;
+  const apiUrl = `https://api.weatherapi.com/v1/${RESULT_KINDS.Forecast}.json?key=${API_KEY}&q=${initialCoords.lat},${initialCoords.lon}&days=3&lang=en`;
 
   const getLocation = async () => {
     const res = await axios.get('https://geolocation-db.com/json/');
@@ -39,7 +39,7 @@ function App() {
       lat: res.data.latitude,
       lon: res.data.longitude
     });
-    console.log(res.data);
+    // console.log(res.data);
   };
 
   useEffect(() => {
@@ -59,7 +59,7 @@ function App() {
   }, []);
 
   useEffect( () => {
-    console.log(weatherData)
+    // console.log(weatherData)
   }, [weatherData]);
 
   return (

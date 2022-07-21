@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
 import Button from '../Button/Button';
 import CardsGroup from '../CardsGroup/CardsGroup';
@@ -9,15 +9,16 @@ const Cards = ({
   forecastData
 }) => {
   const [isWeatherInterval, setIsWeatherInterval] = useState({
+    hourly: false,
     week: true,
     decade: false,
     month: false
   });
-  const [activeDay, setActiveDay] = useState(forecastData[0]);
-  console.log('activeDay is ', activeDay);
+  const [activeDay, setActiveDay] = useState(forecastData[0]);  
 
   const changeWeatherInterval = (interval) => () => {
     setIsWeatherInterval({
+      hourly: false,
       week: false,
       decade: false,
       month: false,
@@ -25,7 +26,7 @@ const Cards = ({
     });
     console.log('interval is ', interval);
   };
-  console.log(forecastData);
+
   return (
     <div className="cards">
       <div className="cards__tabs">
@@ -37,7 +38,7 @@ const Cards = ({
               }
             )
           }
-          buttonText="На 3 дня"
+          buttonText="Daily"
           buttonLocation="tabs"
           onClick={changeWeatherInterval('week')}
         />
@@ -49,7 +50,7 @@ const Cards = ({
               }
             )
           }
-          buttonText="На 24 часа"
+          buttonText="Hourly"
           buttonLocation="tabs"
           onClick={changeWeatherInterval('hourly')}
         />
@@ -59,7 +60,7 @@ const Cards = ({
           forecastData={forecastData}
           setActiveDay={setActiveDay}
           activeDay={activeDay}
-          changeWeatherInterval={changeWeatherInterval}
+          changeWeatherInterval={changeWeatherInterval('hourly')}
           className={
             cx(
               {

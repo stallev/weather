@@ -1,5 +1,5 @@
 import React from 'react';
-import { windDirection } from '../../constants';
+import { windDirectionEng } from '../../constants';
 import Icon from '../Icon/Icon';
 import Text from '../Text/Text';
 
@@ -15,36 +15,36 @@ const DescriptionWeather = ({
           <div className="description-weather__parameter-icon-wrap">
             <Icon className="description-weather__parameter-icon" iconName="temperature" />
           </div>
-          <Text className="description-weather__parameter-name" color="gray">Температура</Text>
+          <Text className="description-weather__parameter-name" color="gray">Temperature</Text>
           <Text className="description-weather__parameter-value" color="white">
-            {currentWeatherData.temp_c}&#8451; - ощущается как {currentWeatherData.feelslike_c}&#8451;;
+            {currentWeatherData.temp_c}&#8451; - feels like {currentWeatherData.feelslike_c}&#8451;;
           </Text>
         </div>
         <div className="description-weather__parameter">
           <div className="description-weather__parameter-icon-wrap">
             <Icon className="description-weather__parameter-icon" iconName="pressure" />
           </div>
-          <Text className="description-weather__parameter-name" color="gray">Давление</Text>
+          <Text className="description-weather__parameter-name" color="gray">Pressure</Text>
           <Text className="description-weather__parameter-value" color="white">
-            {Math.round(currentWeatherData.pressure_mb / 1000, 2)} атмосферы;
+            {Math.round(currentWeatherData.pressure_mb / 1000, 2)} atm;
           </Text>
         </div>
         <div className="description-weather__parameter">
           <div className="description-weather__parameter-icon-wrap">
             <Icon className="description-weather__parameter-icon" iconName="precipitation" />
           </div>
-          <Text className="description-weather__parameter-name" color="gray">Осадки</Text>
+          <Text className="description-weather__parameter-name" color="gray">Precipitation</Text>
           <Text className="description-weather__parameter-value" color="white">
-            {currentWeatherData.precip_mm !== 0 ? `${currentWeatherData.precip_mm} мм` : 'Без осадков'}
+            {currentWeatherData.precip_mm !== 0 ? `${currentWeatherData.precip_mm} мм` : 'No precipitation'}
           </Text>
         </div>
         <div className="description-weather__parameter">
           <div className="description-weather__parameter-icon-wrap">
             <Icon className="description-weather__parameter-icon" iconName="wind" />
           </div>
-          <Text className="description-weather__parameter-name" color="gray">Ветер</Text>
+          <Text className="description-weather__parameter-name" color="gray">Wind</Text>
           <Text className="description-weather__parameter-value" color="white">
-          {Math.round(currentWeatherData.wind_kph*1000/3600)} м/с, {windDirection[currentWeatherData.wind_dir]};
+          {Math.round(currentWeatherData.wind_kph*1000/3600)} m/s, {windDirectionEng[currentWeatherData.wind_dir]};
           </Text>
         </div>
       </div>
