@@ -12,11 +12,8 @@ const CardsGroup = ({
   activeDay,
   isHourly
 }) => {
-  console.log('forecastData is ', forecastData);
-
   const changeActiveDay = (day) => () => {
     setActiveDay(day);
-    console.log('h1122');
     changeWeatherInterval();
   };
   

@@ -24,7 +24,6 @@ const Cards = ({
       month: false,
       [interval]: true
     });
-    console.log('interval is ', interval);
   };
 
   return (
